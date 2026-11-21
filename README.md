@@ -9,26 +9,28 @@
 
 ## Repository Contents
 
-This repository hosts the benchmark harness, verification and audit notebooks, and experimental/statistical archives (with the manuscript PDF published separately on Zenodo)[cite: 1, 2, 4, 37, 69, 72]:
+This repository hosts the benchmark harness, verification and audit notebooks, and experimental/statistical archives. The manuscript PDF is published separately on Zenodo.
 
-- **`SPA_vs_KV/01_kv_cache_vs_spa_10_experiment/`**: Primary 10-model, 6-arm longitudinal benchmark execution and archive package (`240` trajectories across `50` turns each = `12,000` turns, plus `kv_spa_harness` modules and manifests)[cite: 1, 3, 69].
-- **`SPA_vs_KV/02_kv_cache_vs_spa_results/`**: Post-run statistical analysis, publication tables (Tables 1–5), turn-level (`12,000` turns) and trajectory-level (`240` trajectories) CSV exports, and figure generation outputs[cite: 4, 69].
-- **`SPA_vs_KV/03_kv_cache_vs_spa_four_stage_independent_cryptographic_bitwise_audit_v1.ipynb`**: Four-stage independent cryptographic, AST, 12,000-turn metric recomputation, and MixedLM audit notebook[cite: 1, 69].
-- **`SPA_vs_KV/04_kv_cache_vs_spa_final_camera_ready_audit_checkpoints_module_hash_verification.ipynb`**: Final camera-ready verification notebook auditing archive/corpus SHA-256 digests, empty-response telemetry (Table 11), boundary-window sensitivity (`N=235` vs. `N=240`), resolved Hugging Face commits (Table 12), and module AST hashes (Table 13)[cite: 2, 69].
+- **`SPA_vs_KV/01_kv_cache_vs_spa_10_experiment/`**: Primary 10-model, 6-arm longitudinal benchmark execution and archive package (`240` trajectories across `50` turns each = `12,000` turns, plus `kv_spa_harness` modules and manifests).
+- **`SPA_vs_KV/02_kv_cache_vs_spa_results/`**: Post-run statistical analysis, publication tables (Tables 1–5), turn-level (`12,000` turns) and trajectory-level (`240` trajectories) CSV exports, and figure generation outputs.
+- **`SPA_vs_KV/03_kv_cache_vs_spa_four_stage_independent_cryptographic_bitwise_audit_v1.ipynb`**: Four-stage independent cryptographic, AST, 12,000-turn metric recomputation, and MixedLM audit notebook.
+- **`SPA_vs_KV/04_kv_cache_vs_spa_final_camera_ready_audit_checkpoints_module_hash_verification.ipynb`**: Final camera-ready verification notebook auditing archive/corpus SHA-256 digests, empty-response telemetry (Table 11), boundary-window sensitivity (`N=235` vs. `N=240`), resolved Hugging Face commits (Table 12), and module AST hashes (Table 13).
 
 ---
 
 ## Experimental Arms (`A1`–`A6`)
 
 - **Prompt-Channel Baselines & Symbolic Anchoring (`A1`–`A3`):**
-  - **A1 (Raw History):** Unreinforced Turn 0 persona system prompt with verbatim multi-turn history accumulation[cite: 5, 39].
-  - **A2 (Generic Reminder):** Primary reference baseline appending a natural-language persona reminder per user turn[cite: 5, 39].
-  - **A3 (Continuous SPA):** Symbolic Persona Anchoring with a write-once System Precedence Protocol and compact three-token bracketed macro (`[SYS MACRO: <ROLE>]`) per turn[cite: 5, 39].
+  - **A1 (Raw History):** Unreinforced Turn 0 persona system prompt with verbatim multi-turn history accumulation.
+  - **A2 (Generic Reminder):** Primary reference baseline appending a natural-language persona reminder per user turn.
+  - **A3 (Continuous SPA):** Symbolic Persona Anchoring with a write-once System Precedence Protocol and compact three-token bracketed macro (`[SYS MACRO: <ROLE>]`) per turn.
+
 - **Direct KV-Cache Interventions (`A4`–`A6`):**
-  - **A4 (Belitsky-style KV Steering):** Multi-turn adaptation of one-shot additive Key/Value steering (`c_k = c_v = 0.10`) over scaled mid-layers[cite: 6, 39].
-  - **A5 (Sun-style KV Trajectory Transplantation):** Multi-turn adaptation (`MID_LAYER_V2`, trailing slice up to 32 tokens) of mid-layer donor K/V tensor replacement[cite: 6, 39].
-  - **A6 (Memory Inception):** Multi-turn adaptation (`L_mem = 2`, `gamma = 1.0`) of canonical pre-RoPE latent KV memory bank insertion over scaled mid-layers[cite: 6, 39].
-- **Isolated Exploratory Comparator (`OPT_GCAD`):** Attention-output activation steering hook implementation isolated outside the primary six-arm factorial matrix[cite: 5, 9].
+  - **A4 (Belitsky-style KV Steering):** Multi-turn adaptation of one-shot additive Key/Value steering (`c_k = c_v = 0.10`) over scaled mid-layers.
+  - **A5 (Sun-style KV Trajectory Transplantation):** Multi-turn adaptation (`MID_LAYER_V2`, trailing slice up to 32 tokens) of mid-layer donor K/V tensor replacement.
+  - **A6 (Memory Inception):** Multi-turn adaptation (`L_mem = 2`, `gamma = 1.0`) of canonical pre-RoPE latent KV memory bank insertion over scaled mid-layers.
+
+- **Isolated Exploratory Comparator (`OPT_GCAD`):** Attention-output activation steering hook implementation isolated outside the primary six-arm factorial matrix.
 
 ---
 
@@ -47,40 +49,59 @@ This repository hosts the benchmark harness, verification and audit notebooks, a
 
 ## Cryptographic Integrity & Verified Module Hashes
 
-- **Production Backup Archive Byte SHA-256 (`18.24 MB`):** `68caad94812bcf582ce7ff40c9d0ecadc6f13415df380684f43fa8ad7f91bd14`[cite: 2, 29, 30]
-- **240-JSON Trajectory Corpus Content SHA-256:** `d65da777d58a78b7bd693b4d7fb43eb888f1615a1ef7028a2a0bf52ab06a5380`[cite: 2, 29, 30]
-- **12,000-Turn Bitwise Metric Cross-Check:** `max |Δ P_sem| = 5.55e-17`, `max |Δ MATTR-50| = 1.11e-16`, `max |Δ marker_density| = 3.55e-15`, and `100%` exact match on hard constraint violations[cite: 2, 29, 30].
+- **Production Backup Archive Byte SHA-256 (`18.24 MB`):** `68caad94812bcf582ce7ff40c9d0ecadc6f13415df380684f43fa8ad7f91bd14`
+- **240-JSON Trajectory Corpus Content SHA-256:** `d65da777d58a78b7bd693b4d7fb43eb888f1615a1ef7028a2a0bf52ab06a5380`
+- **12,000-Turn Bitwise Metric Cross-Check:** `max |Δ P_sem| = 5.55e-17`, `max |Δ MATTR-50| = 1.11e-16`, `max |Δ marker_density| = 3.55e-15`, and `100%` exact match on hard constraint violations.
 
 | Harness Module | SHA-256[:16] | Core Responsibility |
 | :--- | :---: | :--- |
-| `kv_spa_harness/foundation.py` | `a435f4a49d3a77e9` | Arm specs, 10-model slugs, SHA-256 seeding, manifest export[cite: 2, 3, 34] |
-| `kv_spa_harness/model_registry.py` | `4ceae790d7a0d159` | Model specs, 4-bit NF4 selector, chunked prefill, universal `DynamicCache` I/O[cite: 2, 3, 34] |
-| `kv_spa_harness/dataset.py` | `b04a32e20e8c72e5` | Personas `P1`–`P4`, rubrics, 50-turn scenario & stressor generator[cite: 2, 3, 34] |
-| `kv_spa_harness/baselines.py` | `99cc2662d7db4e78` | Prompt-channel arms `A1`–`A3`, message builder, CUDA telemetry runner[cite: 1, 2, 3, 34] |
-| `kv_spa_harness/belitsky_steering.py` | `5dfe93067bd8de5c` | Arm `A4` contrastive vector extraction and additive KV steering[cite: 1, 2, 3, 34] |
-| `kv_spa_harness/sun_transplantation.py` | `0f45e10a5c684403` | Arm `A5` donor KV bank builder and mid-layer trajectory transplantation[cite: 1, 2, 3, 34] |
-| `kv_spa_harness/memory_inception.py` | `783be8470e9ffd12` | Arm `A6` pre-RoPE memory bank builder and latent KV injection[cite: 1, 2, 3, 34] |
-| `kv_spa_harness/gcad_and_controls.py` | `ef63fa5a241cc3db` | Isolated `OPT_GCAD` attention hooks and legacy SPA robustness controls[cite: 2, 3, 34] |
-| `kv_spa_harness/metrics_and_stats.py` | `a61316c59257139d` | `P_sem`, `MATTR-50`, marker density, violations, BH-FDR, bootstrap Cohen's d[cite: 1, 2, 3, 34] |
-| `kv_spa_harness/runner.py` | `db6575e174af0dba` | `ExperimentOrchestrator`, 240-cell job matrix, exporters[cite: 1, 2, 3, 34] |
+| `kv_spa_harness/foundation.py` | `a435f4a49d3a77e9` | Arm specs, 10-model slugs, SHA-256 seeding, manifest export |
+| `kv_spa_harness/model_registry.py` | `4ceae790d7a0d159` | Model specs, 4-bit NF4 selector, chunked prefill, universal `DynamicCache` I/O |
+| `kv_spa_harness/dataset.py` | `b04a32e20e8c72e5` | Personas `P1`–`P4`, rubrics, 50-turn scenario & stressor generator |
+| `kv_spa_harness/baselines.py` | `99cc2662d7db4e78` | Prompt-channel arms `A1`–`A3`, message builder, CUDA telemetry runner |
+| `kv_spa_harness/belitsky_steering.py` | `5dfe93067bd8de5c` | Arm `A4` contrastive vector extraction and additive KV steering |
+| `kv_spa_harness/sun_transplantation.py` | `0f45e10a5c684403` | Arm `A5` donor KV bank builder and mid-layer trajectory transplantation |
+| `kv_spa_harness/memory_inception.py` | `783be8470e9ffd12` | Arm `A6` pre-RoPE memory bank builder and latent KV injection |
+| `kv_spa_harness/gcad_and_controls.py` | `ef63fa5a241cc3db` | Isolated `OPT_GCAD` attention hooks and legacy SPA robustness controls |
+| `kv_spa_harness/metrics_and_stats.py` | `a61316c59257139d` | `P_sem`, `MATTR-50`, marker density, violations, BH-FDR, bootstrap Cohen's d |
+| `kv_spa_harness/runner.py` | `db6575e174af0dba` | `ExperimentOrchestrator`, 240-cell job matrix, exporters |
 
 ---
 
 ## Citation
+
+If you use this research in academic work, please cite the Zenodo publication.
+
+**DOI:** https://doi.org/10.5281/zenodo.24424861
+
+### Suggested Citation
+
+Nabh Sanjay, M. (2026). *Evaluating Symbolic Persona Anchoring and Direct KV-Cache Interventions for Multi-Turn LLM Persona Preservation: A Six-Method, 10-Model Longitudinal Study* (Version 1.0.0). Zenodo. https://doi.org/10.5281/zenodo.24424861
+
+### BibTeX
 
 ```bibtex
 @misc{mehta2026kvspa,
   author       = {Mehta, Nabh Sanjay},
   title        = {Evaluating Symbolic Persona Anchoring and Direct KV-Cache Interventions for Multi-Turn LLM Persona Preservation: A Six-Method, 10-Model Longitudinal Study},
   year         = {2026},
-  publisher    = {Phlowerman Ventures LLP / Zenodo},
-  url          = {[https://github.com/phlowermanventuresllp/kv-cache-vs-spa](https://github.com/phlowermanventuresllp/kv-cache-vs-spa)}
+  publisher    = {Zenodo},
+  version      = {1.0.0},
+  doi          = {10.5281/zenodo.24424861},
+  url          = {https://doi.org/10.5281/zenodo.24424861}
 }
 ```
+
+### Research Links
+
+- **Zenodo Publication:** https://doi.org/10.5281/zenodo.24424861
+- **GitHub Repository:** https://github.com/phlowermanventuresllp/kv-cache-vs-spa
+- **GitHub Release:** https://github.com/phlowermanventuresllp/kv-cache-vs-spa/releases/tag/v1.0.0
+
 ---
 
 ## Copyright & License
 
 © 2026 Phlowerman Ventures LLP. All Rights Reserved.
 
-Made publicly available for academic peer review and reproducibility verification. No commercial use, redistribution, or derivative works are permitted without prior written permission from Phlowerman Ventures LLP.
+Made publicly available for academic peer review and reproducibility verification. No commercial use, redistribution, or derivative works are permitted without prior written permission from Phlowerman Ventures LLP, subject to applicable law and third-party rights.
