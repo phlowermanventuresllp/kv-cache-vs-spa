@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this benchmark harness, notebooks, or audited telemetry, please cite it using the metadata below."
+title: "Evaluating Symbolic Persona Anchoring and Direct KV-Cache Interventions for Multi-Turn LLM Persona Preservation: A Six-Method, 10-Model Longitudinal Study"
+version: "1.0.0"
+date-released: "2026-11-21"
+authors:
+  - family-names: "Mehta"
+    given-names: "Nabh Sanjay"
+    email: "nabhsanjaymehta@phlowerman.com"
+    affiliation: "Phlowerman Ventures LLP"
+repository-code: "https://github.com/phlowermanventuresllp/kv-cache-vs-spa"
+keywords:
+  - "Symbolic Persona Anchoring (SPA)"
+  - "KV-Cache Steering"
+  - "Multi-Turn Persona Preservation"
+  - "Activation Steering"
+  - "Memory Inception"
+  - "Longitudinal LLM Evaluation"
+  - "ROPE Positional Alignment"
+  - "Inference-Time Control"
+abstract: >-
+  Extending prior Symbolic Persona Anchoring (SPA) research, this study conducts a balanced
+  6x10x4 longitudinal benchmark (240 trajectories, 12,000 turns across 50-turn rollouts)
+  across 10 open-weight models (3B-14B) and four personas, comparing baseline controls
+  (A1 Raw History, A2 Generic Reminder), symbolic anchoring (A3 Continuous SPA), and
+  multi-turn adaptations of direct Key-Value (KV) cache interventions (A4 Belitsky-style
+  additive steering, A5 Sun-style mid-layer transplantation, and A6 Memory Inception latent
+  KV banks), with SHA-256 checksum verification and bitwise metric recomputation.
