@@ -1,0 +1,14 @@
+Copyright (c) 2026 Phlowerman Ventures LLP. All Rights Reserved.
+
+This repository ("Evaluating Symbolic Persona Anchoring and Direct KV-Cache
+Interventions for Multi-Turn LLM Persona Preservation: A Six-Method, 10-Model
+Longitudinal Study"), including its benchmark harness, notebooks, data archives,
+and associated documentation, is the proprietary intellectual property of
+Phlowerman Ventures LLP.
+
+Made publicly available strictly for academic peer review, non-commercial
+research inspection, and reproducibility verification. No commercial use,
+sublicensing, redistribution, or creation of derivative works is permitted
+without prior written permission from Phlowerman Ventures LLP.
+
+For permissions and inquiries, contact: nabhsanjaymehta@phlowerman.com
