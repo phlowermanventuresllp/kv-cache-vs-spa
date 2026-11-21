@@ -1,14 +1,74 @@
 cff-version: 1.2.0
-message: "If you use this benchmark harness, notebooks, or audited telemetry, please cite it using the metadata below."
-title: "Evaluating Symbolic Persona Anchoring and Direct KV-Cache Interventions for Multi-Turn LLM Persona Preservation: A Six-Method, 10-Model Longitudinal Study"
-version: "1.0.0"
-date-released: "2026-11-21"
+
+message: >-
+  If you use this benchmark software, please cite the specific software
+  release using the metadata below. If you use or discuss the study's
+  empirical findings, also cite the associated Zenodo research paper
+  provided under preferred-citation.
+
+type: software
+
+title: "KV-Cache vs. SPA: Research Benchmark and Reproducibility Package"
+
+abstract: >-
+  This repository provides the experimental implementation and
+  reproducibility resources for a controlled longitudinal evaluation
+  of Symbolic Persona Anchoring (SPA) and direct Transformer Key-Value
+  (KV) cache interventions. The benchmark comprises a balanced
+  6 × 10 × 4 factorial design, covering six experimental arms (A1–A6),
+  ten open-weight language models (3B–14B), and four persona archetypes,
+  yielding 240 trajectories and 12,000 conversational turns across
+  50-turn rollouts.
+
+  The implementation covers prompt-channel baselines and symbolic
+  anchoring (A1 Raw History, A2 Generic Reminder, A3 Continuous SPA),
+  alongside three implemented multi-turn adaptations of direct KV-cache
+  interventions (A4 Belitsky-style additive steering, A5 Sun-style
+  mid-layer trajectory transplantation, and A6 Memory Inception
+  latent pre-RoPE KV banks).
+
+  The research package includes model and experimental-arm registries,
+  deterministic SHA-256 scenario seeding, persona and stressor
+  generation, dedicated KV-cache intervention modules, semantic
+  preservation and lexical-diversity metrics, statistical analysis,
+  trajectory exports, and independent verification resources.
+
+  The four-stage verification protocol covers archive and corpus
+  integrity, implementation dispatch and AST auditing, bitwise
+  recomputation of metrics across all 12,000 turns, and inferential
+  statistical reproduction. A4–A6 are explicitly treated as
+  implemented multi-turn methodological adaptations rather than
+  exact reproductions of the original published pipelines.
+
 authors:
   - family-names: "Mehta"
     given-names: "Nabh Sanjay"
     email: "nabhsanjaymehta@phlowerman.com"
     affiliation: "Phlowerman Ventures LLP"
+
+contact:
+  - family-names: "Mehta"
+    given-names: "Nabh Sanjay"
+    email: "nabhsanjaymehta@phlowerman.com"
+    affiliation: "Phlowerman Ventures LLP"
+
+version: "1.0.0"
+
+date-released: "2026-11-21"
+
+commit: "4749c6491774413f0fc9e196aba7511ec9397429"
+
 repository-code: "https://github.com/phlowermanventuresllp/kv-cache-vs-spa"
+
+url: "https://github.com/phlowermanventuresllp/kv-cache-vs-spa/releases/tag/v1.0.0"
+
+identifiers:
+  - description: "Official GitHub release for version 1.0.0."
+    type: url
+    value: "https://github.com/phlowermanventuresllp/kv-cache-vs-spa/releases/tag/v1.0.0"
+
+license-url: "https://github.com/phlowermanventuresllp/kv-cache-vs-spa/blob/v1.0.0/LICENSE"
+
 keywords:
   - "Symbolic Persona Anchoring (SPA)"
   - "KV-Cache Steering"
@@ -16,13 +76,24 @@ keywords:
   - "Activation Steering"
   - "Memory Inception"
   - "Longitudinal LLM Evaluation"
-  - "ROPE Positional Alignment"
+  - "RoPE Positional Alignment"
   - "Inference-Time Control"
-abstract: >-
-  Extending prior Symbolic Persona Anchoring (SPA) research, this study conducts a balanced
-  6x10x4 longitudinal benchmark (240 trajectories, 12,000 turns across 50-turn rollouts)
-  across 10 open-weight models (3B-14B) and four personas, comparing baseline controls
-  (A1 Raw History, A2 Generic Reminder), symbolic anchoring (A3 Continuous SPA), and
-  multi-turn adaptations of direct Key-Value (KV) cache interventions (A4 Belitsky-style
-  additive steering, A5 Sun-style mid-layer transplantation, and A6 Memory Inception latent
-  KV banks), with SHA-256 checksum verification and bitwise metric recomputation.
+
+preferred-citation:
+  type: article
+  status: preprint
+  authors:
+    - family-names: "Mehta"
+      given-names: "Nabh Sanjay"
+      affiliation: "Phlowerman Ventures LLP"
+  title: >-
+    Evaluating Symbolic Persona Anchoring and Direct KV-Cache Interventions
+    for Multi-Turn LLM Persona Preservation:
+    A Six-Method, 10-Model Longitudinal Study
+  publisher:
+    name: "Zenodo"
+  date-published: "2026-11-21"
+  year: 2026
+  version: "1.0.0"
+  doi: "10.5281/zenodo.24424861"
+  url: "https://doi.org/10.5281/zenodo.24424861"
