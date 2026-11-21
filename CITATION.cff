@@ -1,3 +1,4 @@
+
 cff-version: 1.2.0
 
 message: >-
@@ -86,10 +87,7 @@ preferred-citation:
     - family-names: "Mehta"
       given-names: "Nabh Sanjay"
       affiliation: "Phlowerman Ventures LLP"
-  title: >-
-    Evaluating Symbolic Persona Anchoring and Direct KV-Cache Interventions
-    for Multi-Turn LLM Persona Preservation:
-    A Six-Method, 10-Model Longitudinal Study
+  title: "Evaluating Symbolic Persona Anchoring and Direct KV-Cache Interventions for Multi-Turn LLM Persona Preservation: A Six-Method, 10-Model Longitudinal Study"
   publisher:
     name: "Zenodo"
   date-published: "2026-11-21"
