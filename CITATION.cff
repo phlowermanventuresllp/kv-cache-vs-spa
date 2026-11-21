@@ -67,7 +67,7 @@ identifiers:
     type: url
     value: "https://github.com/phlowermanventuresllp/kv-cache-vs-spa/releases/tag/v1.0.0"
 
-license-url: "https://github.com/phlowermanventuresllp/kv-cache-vs-spa/blob/v1.0.0/LICENSE"
+license-url: "https://github.com/phlowermanventuresllp/kv-cache-vs-spa/blob/main/LICENSE"
 
 keywords:
   - "Symbolic Persona Anchoring (SPA)"
